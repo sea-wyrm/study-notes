@@ -23,6 +23,7 @@ int main(){
     cout << "Please input you height in inch: __\b\b";
     cin >> heigth;
     cout << heigth / change_inch << ' ' << heigth % change_inch << endl;
+    return 0;
 }
 ```
 
@@ -62,6 +63,7 @@ int main(){
     double BMI = pow(weight_kg / height_meter, 2);
     
     cout << BMI;
+    return 0;
 }
 ```
 
@@ -115,6 +117,7 @@ int main(){
     double all_degrees = degrees + minutes / degree_to_minutes + seconds / minutes_to_seconds / degree_to_minutes;
     
     printf("%d degrees, %d minutes, %d seconds = %.4f degrees." , degrees, minutes, seconds, all_degrees);
+    return 0;
 }
 ```
 
@@ -134,4 +137,64 @@ Enter the number of seconds: 31600000
 ```
 
 **解：**
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+const int day_to_hour = 24;
+const int hour_to_minute = 60;
+const int minute_to_second = 60;
+
+int main(){
+	int total_seconds, days, hours, minutes, seconds;
+	cout << "Enter the number of seconds: ";
+	cin >> total_seconds;
+	
+	seconds = total_seconds % minute_to_second;
+	minutes = total_seconds / minute_to_second % hour_to_minute;
+	hours = total_seconds / minute_to_second / hour_to_minute % day_to_hour;
+	days = total_seconds / minute_to_second / hour_to_minute / day_to_hour;
+	
+	printf("%d seconds = %d days, %d hours, %d minutes, %d seconds.", total_seconds, days, hours, minutes, seconds);
+	return 0;
+}
+```
+
+
+
+# 3.5
+
+**题：**
+
+> 编写一个程序，要求用户输入全球当前的人口<kbd>population</kbd>和中国当前的人口（或其他国家的人口）。将这些信息存储在long long变量中，并让程序显示中国（或其他国家）的人口占全球人口的百分比。该程序的输出应与下面类似：
+
+```
+Enter the world's population: 7850176700
+Enther the population of China: 1411780000
+The population of the China is 17.9841% of the world population.
+```
+
+**解：**
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	long long world_population, china_population;
+	cout << "Enter the world's population: ";
+	cin >> world_population;
+	
+	cout << "Enther the population of China: ";
+	cin >> china_population;
+	
+	double china_of_world = (double)china_population / world_population *100;
+	printf("The population of the China is %.4f%% of the world population.", china_of_world);
+	
+	return 0;
+}
+```
+
+
 
