@@ -6,7 +6,7 @@ using namespace std;
 const int array_size = 15;
 
 int main(){
-	char name1[array_size];				// empty array
+	char name1[array_size];			// empty array
 	char name2[array_size] = "Wyrm";	// initialized array
 	// NOTE: some implementations my require the static keyword 
 	// to initialized array name2
