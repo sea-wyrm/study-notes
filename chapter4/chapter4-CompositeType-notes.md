@@ -206,9 +206,84 @@ getline(cin, str);
 
 ## 结构
 
+结构定义：
+$$
+\overbrace{struct}^{\text{关键字}} \ \ \ \ \overbrace{inflatable}^{\text{标记成为新类型的名称}} \\
+左大括号和
+右大括号
+\begin{Bmatrix}
+\{ \\
+& char & name[20]; & \\
+& float & volume;  & \\
+& double & price; & \\
+\ \underbrace{\};}_{\text{结束结构声明}}
+\end{Bmatrix}结构的成员
+$$
+
+样例：
+
+
+```C++
+struct name{
+  	int n1;
+    double n2;
+    int n3[100];
+};
+
+name peo = {1, 2, {0}};
+```
+
+> C++ 不提倡使用外部变量，但提倡使用外部结构声明。
+
+
+
 ## 共用体
 
+共用体是一种数据格式，它能够存储不同的数据类型，但只能同时存储其中的一种数据类型。
+
+> 也就是说，结构可以同时存储int、float和double，但共用体只能存储int、float或double。
+
+样例：
+
+```C++
+union one4all
+{
+    int int_val;
+    long long_val;
+    double double_val;
+};
+```
+
+可以使用one4all变量来存储int、long或double，但需要在不同的时间进行：
+
+```C++
+one4all pail;
+pail.int_val = 15;		// store an int
+cout << pail.int_val;
+pail.double_val = 1.38;
+cout << pail.double_val;	// store a double, int value is lost
+```
+
+共用体的用途：当数据项使用两种或更多种格式（但不会同时使用）时，可以节省空间。
+
+
+
 ## 枚举
+
+`enum`可以创建符号常量，可以代替const。
+
+样例：
+
+```C++
+enum spectrum {red, orange, yellow, green, blue, violet, indigo, ultraviolet};
+```
+
+这条语句完成两项工作：
+
+- 让spectrum成为新类型的名称：spectrum被称为**枚举**<kbd>enumeration</kbd>，就像struct变量被称为结构一样。
+- 将red、orange、yellow等作为符号常量，它们对应整数值0~7。这些常量叫做**枚举量**<kbd>enumerator</kbd>。
+
+
 
 ## 指针
 
