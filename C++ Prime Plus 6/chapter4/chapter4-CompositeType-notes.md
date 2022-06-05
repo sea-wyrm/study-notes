@@ -283,9 +283,50 @@ enum spectrum {red, orange, yellow, green, blue, violet, indigo, ultraviolet};
 - 让spectrum成为新类型的名称：spectrum被称为**枚举**<kbd>enumeration</kbd>，就像struct变量被称为结构一样。
 - 将red、orange、yellow等作为符号常量，它们对应整数值0~7。这些常量叫做**枚举量**<kbd>enumerator</kbd>。
 
+> 在默认情况下，将整数值赋给枚举量，第一个枚举量的值为0，第二个枚举量的值为1，以此类推。可以通过显式地指定整数值来覆盖默认值。
+
+可以用枚举名来声明这种类型的变量：
+
+```C++
+spectrum band;	// band: a variable of sype spectrum
+```
+
+在不进行强制转换的情况下，只能将定义枚举时使用的枚举量赋给这种枚举的变量：
+
+```C++
+band = blue;	// valid, blue is an enumerator
+band = 2000;	// invalid, 2000 is not an enumerator
+```
+
+枚举量是整型，可被提升为int类型，但int类型不能自动转换为枚举类型：
+
+```C++
+int color = blue;	// valid, spectrum type promoted to int
+band = 3;		// invalid, int not converted to spectrum
+color = 3 + red;	// valid, red converted to int
+```
+
 
 
 ## 指针
+
+计算机程序在存储数据时必须跟踪的3种基本属性：
+
+- 信息存储在何处
+- 存储的值为多少
+- 存储的信息是什么类型
+
+> 以往，我们用了一种策略来达到以上的目的：定义一个简单变量。声明语句指出了值的类型和符号名，还让程序为值分配内存，并在内部跟踪该内存单元。
+
+
+
+现在，有一种新的策略，它在开发C++类时非常重要。
+
+这种策略以指针为基础，**指针是一个变量，其存储的是值的地址，而不是值本身。**
+
+> 如何找到常规变量的地址：对变量应用取地址符(`&`)，就可以获得它的位置。如果`home`是一个变量，那么`&home`是它的地址
+
+
 
 ## `new ` 和 `delete`管理动态内存
 
