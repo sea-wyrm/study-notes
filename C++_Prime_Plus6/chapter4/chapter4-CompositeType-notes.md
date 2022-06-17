@@ -634,7 +634,96 @@ inflatable* pi = new inflatable;
 
 
 
-## 自动存储、静态存储和动态存储
+#### 自动存储、静态存储和动态存储
 
-## `vector` 和 `array`类简介
+1. 自动存储
+
+在函数内部定义的常规变量使用自动存储空间，被称为自动变量 （automatic variable），只在包含它的代码中有效，这意味着它们在所属的函数被调用时自动产生，在该函数结束时消亡。
+
+自动变量通常存储在栈中。
+
+2. 静态存储
+
+静态存储是整个程序执行期间都存在的存储方式。使变量成为静态 的方式有两种：一种是在函数外面定义它；另一种是在声明变量时使用 关键字 `static`。
+
+3. 动态存储
+
+`new` 和 `delete` 运算符提供了一种比自动变量和静态变量更灵活的方法。它们管理了一个内存池，这在C++中被称为自由存储空间（free store）或堆（heap）。该内存池同用于静态变量和自动变量的内存是分开的。
+
+
+
+#### 类型组合：指针数组（指向指针的指针）
+
+```C++
+#include <iostream>
+using namespace std;
+
+struct pd{
+    int year;
+    string name;
+};
+
+int main(){
+    pd s1 = {1,"Andy"}, s2 = {2,"Bob"}, s3 = {3, "Candy"};
+    pd *p[3] = {&s1, &s2, &s3};
+    cout << s1.name << endl;
+    cout << p[1]->name << endl;
+    cout << (*p[2]).name << endl;
+    pd **pp = p;
+    cout << (*p[0]).year << endl;
+    return 0;
+}
+```
+
+
+
+#### `vector` 和 `array`类简介
+
+`vector`和`array`是数组的替代品。模板类 `vector` 类似于 `string` 类，也是一种动态数组，创建时要包含头文件 vector 。可以在运行阶段设置 `vector` 对象的长度，也可在末尾附加新数据，还可以在中间插入新数据，`vector` 的长度不要求必须设定，因为它会依据插入的数据量自动增长，容量增长的速度是 2 的 `n` 次方。
+
+基本上，它是使用 `new` 创建动态数组的替代品。实际上，`vector` 类确实使用 `new` 和`delete` 来管理内存，但这种工作是自动完成的。
+
+`vector` 的声明方式：
+
+```Cpp
+#include<vector>
+vector<typeName> v_name(number);
+```
+
+这样 v_name 就是一个 vector 对象，但 number 不是必须的。
+
+用法：
+
+```C++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<int> sv;  // create vector, can create without num
+    int n;
+    sv.assign(10, 1);   // assign: can init vector
+    for (int i = 0; i < sv.size(); ++i) {
+        cout << sv.at(i) << ' '; // at: can read
+    }
+    cout << endl;
+    sv.at(sv.size() - 1) = 9;   // at: can wirte
+    sv.at(0) = 0;
+    cout << sv.back() << endl;  // back: can r/w the last one
+    cout << *sv.begin() << endl; // begin: a pointer
+    for (int i = 0; i < 5; ++i) {
+        cin >> n;
+        sv.push_back(n);    // push_back: add the last one of vector
+    }
+    for (int i = 0; i < sv.size(); ++i) {
+        cout << sv.at(i) << ' '; // at: can read
+    }
+    cout << endl;
+    sv.pop_back();  // pop_back: pop the last one of vector
+    for (int i = 0; i < sv.size(); ++i) {
+        cout << sv.at(i) << ' '; // at: can read
+    }
+    return 0;
+}
+```
 
