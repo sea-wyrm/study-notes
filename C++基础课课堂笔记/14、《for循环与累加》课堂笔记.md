@@ -6,8 +6,6 @@
 
 试编一程序，算一算《雪花》第一句中数字1、2、3、4的和是多少？
 
-<img src="../../../Library/Application%20Support/typora-user-images/image-20220615155806722.png" alt="image-20220615155806722" style="zoom:40%;" />
-
 ```C++
 #include <iostream>
 using namespace std;
@@ -172,35 +170,3 @@ int main(){
 【07:奥运奖牌计数】http://noi.openjudge.cn/ch0105/07/（多项累加）
 
 【09:奇数求和】http://noi.openjudge.cn/ch0105/09/（有条件的累加）
-
-
-
-
-
-**后面的内容待定：**
-
-累加和、阶乘、
-
-
-
-累减（多边形内角和）
-
-http://noi.openjudge.cn/ch0105/08/
-
-求极值
-
-[ 整数序列的元素最大跨度值](http://noi.openjudge.cn/ch0105/06/)
-
-多项求和
-
-[ 奥运奖牌计数](http://noi.openjudge.cn/ch0105/07/)
-
-单项求和
-
-[ 多边形内角和](http://noi.openjudge.cn/ch0105/08/)
-
-带条件的求和
-
-[ 奇数求和](http://noi.openjudge.cn/ch0105/09/)
-
-[ 满足条件的数累加](http://noi.openjudge.cn/ch0105/10/)

@@ -235,6 +235,31 @@ strlen(char2);			// obtain length of char2
 > >
 > > C++ string类对象使用对象名和句点运算符来指出要用哪个字符串
 
+```C++
+string str1("hello");
+string str2(" world");
+
+auto str3 = str1 + str2;//连接两个string，hello world
+auto str4 = str1 + " xiao ming";//连接string和字符指针，hello xiao ming
+
+str3.assign("12345678");//赋值为12345678
+
+str3.clear();//清空所有字符
+
+str3.append("222");//追加字符串
+
+str3.insert(1, "abc",3);
+cout << str3<<endl;//2abc22
+
+str3.replace(1, 3,"defg");
+cout << str3 << endl;//2defg22
+
+str3.erase(1, 4);
+cout << str3 << endl;//222
+```
+
+
+
 
 
 #### string的输入
