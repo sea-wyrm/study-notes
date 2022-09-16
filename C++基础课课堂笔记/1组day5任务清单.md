@@ -53,6 +53,8 @@ C++ 中的算术运算符：`+`、`-`、`*`、`/`、`%`
 > - 需要一个变量，变量名为`age`，赋值的是20，推理出变量的数据类型是整型`int`
 > - 然后用cout语句先输出`"我的年龄是输出这个"`，再输出`age`变量，再输出`"岁"`
 
+​       
+
 
 
 【2】题目：定义2个变量a,b，其中a的值为1，b的值为2，输出它们相加的值
@@ -76,7 +78,7 @@ C++ 中的算术运算符：`+`、`-`、`*`、`/`、`%`
 
 2061：【例1.2】梯形面积
 
-> 梯形面积 = （15 + 25）*（150 / 15）/ 2
+> 梯形面积 = （15 + 25）*（150 / 15 x 2）/ 2
 
 ***
 
@@ -150,7 +152,7 @@ cin >> a >> b >> c;	// 用>>分隔不同的变量
 
 为鼓励居民节约用水，自来水公司采取按用水量阶梯式计价的办法，居民应交水费y（元）与当月用水量x（吨）相关：当月用水量不超过15吨时，每吨收费2元；超过15吨，每吨收费3元。请编写程序实现水费的计算，输入当月用水量x，输出居民应交的水费。
 
-<img src="/Users/wyrm/Library/Application Support/typora-user-images/image-20220729093602737.png" alt="image-20220729093602737" style="zoom:40%;" />
+<img src="/Users/wyrm/Library/Application Support/typora-user-images/image-20220729093602737.png" alt="image-20220729093602737" style="zoom:30%;" />
 
 
 
@@ -158,7 +160,7 @@ cin >> a >> b >> c;	// 用>>分隔不同的变量
 
 小明遇到了一个问题，他不知道分秒怎么换算，请你写一个程序，分别输入分钟数量和秒的数量，输出总秒数。
 
-<img src="/Users/wyrm/Library/Application Support/typora-user-images/image-20220729093941461.png" alt="image-20220729093941461" style="zoom:50%;" />
+<img src="/Users/wyrm/Library/Application Support/typora-user-images/image-20220729093941461.png" alt="image-20220729093941461" style="zoom:30%;" />
 
 ***
 
@@ -232,7 +234,7 @@ cin >> a >> b >> c;	// 用>>分隔不同的变量
 
 一个最简单的计算器支持`+，-，*`，三种运算。输入只有一行：两个参加运算的数和一个操作符(`+，-，*`)。输出运算表达式的结果。如果出现无效的操作符(即不为`+，-，*` 之一)，则输出：`Invalid operator!`
 
-<img src="/Users/wyrm/Library/Application Support/typora-user-images/image-20220729095124659.png" alt="image-20220729095124659" style="zoom:50%;" />
+<img src="/Users/wyrm/Library/Application Support/typora-user-images/image-20220729095124659.png" alt="image-20220729095124659" style="zoom:40%;" />
 
 
 
@@ -248,7 +250,7 @@ cin >> a >> b >> c;	// 用>>分隔不同的变量
 
 样例输入：35
 
-样例输出：3 5
+样例输出：5 7
 
 
 
